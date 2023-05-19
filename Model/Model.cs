@@ -38,7 +38,7 @@ public static class Model
 
     public static List<IProduct> products = new List<IProduct> {
         new Product("chocolate", 2.0m),
-        new Product("coke", 1.5m),
-        new Product("popcorn", 5.0m),
+        new Product("biscoito", 1.5m),
+        new Product("pipoca", 5.0m),
     };
 }

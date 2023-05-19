@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using static Model;
 using static VendingMachine;
+using static Model;
+
 
 public class Program
 {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 public interface ICoin
 {
@@ -17,6 +18,10 @@ public interface IProduct
 public class VendingMachine
 {
 
+    private const string ACCEPTED_COINS = "Aceitamos moedas de: 0.01, 0.05, 0.10, 0.50 and 1.00";
+    private const string CHECK_VALUE = "\nVerifique o valor inserido";
+    private const string THANKS = "Obrigado pela preferência, seu troco é: ";
+    private const string ERROR = "Produto inexistente/dinheiro insuficiente";
 
     private decimal totalCoins = 0;
     private List<ICoin> coins;
@@ -30,27 +35,33 @@ public class VendingMachine
 
     public bool IsCoin(string value)
     {
-        decimal coin = decimal.Parse(value);
+        bool sucesso = decimal.TryParse(value, out decimal coin);
 
-        return this.coins.Any(val => val.Value == coin);
+        if (sucesso)
+        {
+            return this.coins.Any(val => val.Value == coin);
+        }
+
+        return false;
     }
 
     public void AddCoins(string value)
     {
-        Console.WriteLine("Aceitamos moedas de: 0.01, 0.05, 0.10, 0.50 and 1.00");
+        StringBuilder message = new StringBuilder();
+        message.Append(ACCEPTED_COINS);
 
         decimal coin = decimal.Parse(value);
 
-        if (this.IsCoin(value))
+        if (!this.IsCoin(value))
         {
-            this.totalCoins += coin;
-            Console.WriteLine($"Você inseriu {value} e seu saldo é {this.totalCoins}");
-        }
-        else
-        {
-            Console.WriteLine("Verifique o valor inserido");
+            message.Append(CHECK_VALUE);
+            Console.WriteLine(message);
             return;
         }
+
+        this.totalCoins += coin;
+        message.Append($"\nVocê inseriu {value} e seu saldo é de {this.totalCoins}");
+        Console.WriteLine(message);
     }
 
     public bool IsProduct(string product)
@@ -61,18 +72,23 @@ public class VendingMachine
     public void BuyProduct(string product)
     {
         IProduct item = this.products.FirstOrDefault(
-            val => val.Name == product && val.Price <= this.totalCoins
-        );
+            val => val.Name == product);
 
-        if (item != null)
+        item ??= new Product("Sem produto", 0);
+
+
+        if (item != null && totalCoins >= item.Price)
         {
             decimal charge = this.totalCoins - item.Price;
-            this.totalCoins = charge;
-            Console.WriteLine($"Obrigado pela preferência, seu troco é: {charge}");
+            Console.WriteLine($"{THANKS} {charge}");
+            totalCoins -= item.Price;
+            return;
+
         }
-        else
-        {
-            Console.WriteLine("Produto inexistente/dinheiro insuficiente");
-        }
+
+        Console.WriteLine("Produto inexistente/dinheiro insuficiente");
+        return;
+
+
     }
 }
