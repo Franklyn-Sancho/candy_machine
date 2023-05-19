@@ -1,0 +1,15 @@
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/obj/Debug/net7.0/vending_machine.csproj.AssemblyReference.cache
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/obj/Debug/net7.0/vending_machine.GeneratedMSBuildEditorConfig.editorconfig
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/obj/Debug/net7.0/vending_machine.AssemblyInfoInputs.cache
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/obj/Debug/net7.0/vending_machine.AssemblyInfo.cs
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/obj/Debug/net7.0/vending_machine.csproj.CoreCompileInputs.cache
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/bin/Debug/net7.0/vending_machine
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/bin/Debug/net7.0/vending_machine.deps.json
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/bin/Debug/net7.0/vending_machine.runtimeconfig.json
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/bin/Debug/net7.0/vending_machine.dll
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/bin/Debug/net7.0/vending_machine.pdb
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/obj/Debug/net7.0/vending_machine.dll
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/obj/Debug/net7.0/refint/vending_machine.dll
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/obj/Debug/net7.0/vending_machine.pdb
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/obj/Debug/net7.0/vending_machine.genruntimeconfig.cache
+/home/franklyn/Documentos/Códigos/Csharp/vending_machine/obj/Debug/net7.0/ref/vending_machine.dll
